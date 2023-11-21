@@ -1,4 +1,5 @@
-package ru.netology.testmode;
+
+package ru.netology.testmode.test;
 
 import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
