@@ -1,4 +1,4 @@
-package ru.netology.testmode.test;
+package ru.netology.testmode;
 
 import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
@@ -6,7 +6,6 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.Value;
-import lombok.val;
 
 import java.util.Locale;
 
@@ -15,7 +14,7 @@ import static io.restassured.RestAssured.given;
 public class DataGenerator {
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()
             .setBaseUri("http://localhost")
-            .setPort(7777)
+            .setPort(9999)
             .setAccept(ContentType.JSON)
             .setContentType(ContentType.JSON)
             .log(LogDetail.ALL)
@@ -27,7 +26,7 @@ public class DataGenerator {
 
     private static void sendRequest(RegistrationDto user) {
 
-        RestAssured.given()
+        given()
                 .spec(requestSpec)
                 .body(user)
                 .when()
