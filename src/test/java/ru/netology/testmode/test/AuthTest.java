@@ -26,7 +26,7 @@ class AuthTest {
         $("[data-test-id='login'] input").setValue(registeredUser.getLogin()  );
         $("[data-test-id='password'] input").setValue(registeredUser.getPassword()  );
         $(".button").click( );
-        $("[id='root']").shouldHave( Condition.text("Личный кабинет")).shouldBe(Condition.visible  );
+        $("h2").shouldHave( Condition.text("Личный кабинет")).shouldBe(Condition.visible  );
 
 
     }
